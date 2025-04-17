@@ -1,10 +1,7 @@
 import CardSkills from "./cardSkills";
-import NavBar from "./navBar";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ParticleBackground from "./particlesBackground";
-import { motion } from "motion/react";
 import ProjectCard from "./cardList";
-import Modal from "./modal";
 import projectsData from "./projetos.json";
 
 

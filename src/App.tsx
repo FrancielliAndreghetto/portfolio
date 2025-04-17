@@ -3,10 +3,29 @@ import NavBar from "./navBar";
 import React, { useEffect, useState } from "react";
 import ParticleBackground from "./particlesBackground";
 import { motion } from "motion/react";
-import CardList from "./cardList";
+import ProjectCard from "./cardList";
 import Modal from "./modal";
+import projectsData from "./projetos.json";
+
+
+type Project = {
+  title: string;
+  description: string;
+  images: string[];
+  githubLink: string;
+  demoLink: string;
+};
 
 const App = () => {
+
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Carrega os projetos do JSON local
+    setProjects(projectsData);
+    setLoading(false);
+  }, []);
 
   const text = "Olá, meu nome é Francielli Andreghetto";
   const numSteps = text.length; // Número de caracteres do texto
@@ -107,10 +126,19 @@ const App = () => {
       <section className="h-screen p-8">
         <div>
           <h1 className="text-white text-center font-bold text-3xl">Meus projetos</h1>
-          <div className="p-10">
-            <CardList setSelectedProject={setSelectedProject} />
-            <Modal selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              images={project.images}
+              title={project.title}
+              description={project.description}
+              githubLink={project.githubLink}
+              demoLink={project.demoLink}
+            />
+          ))}
           </div>
+
         </div>
       </section>
       {/* <section>

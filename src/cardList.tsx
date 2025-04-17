@@ -1,57 +1,61 @@
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 
-const projects = [
-  {
-    id: "1",
-    title: "Sistema de Gestão Escolar",
-    img: "/assets/Gradient.png",
-    description: "Plataforma completa para escolas gerenciarem alunos, professores e turmas.",
-  },
-  {
-    id: "2",
-    title: "E-commerce de Roupas",
-    img: "/assets/Gradient.png",
-    description: "Loja virtual moderna com integração de pagamentos e catálogo dinâmico.",
-  },
-  {
-    id: "2",
-    title: "E-commerce de Roupas",
-    img: "/assets/Gradient.png",
-    description: "Loja virtual moderna com integração de pagamentos e catálogo dinâmico.",
-  },
-  {
-    id: "3",
-    title: "E-commerce de Roupas",
-    img: "/assets/Gradient.png",
-    description: "Loja virtual moderna com integração de pagamentos e catálogo dinâmico.",
-  },
-  {
-    id: "4",
-    title: "E-commerce de Roupas",
-    img: "/assets/Gradient.png",
-    description: "Loja virtual moderna com integração de pagamentos e catálogo dinâmico.",
-  },
-];
+interface ProjectCardProps {
+  images: string[];  // Agora espera um array de imagens
+  title: string;
+  description: string;
+  githubLink: string;
+  demoLink: string;
+}
 
-type CardListProps = {
-  setSelectedProject: (project: { id: string; title: string; img: string; description: string } | null) => void;
-};
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  images,
+  title,
+  description,
+  githubLink,
+  demoLink,
+}) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-const CardList: React.FC<CardListProps> = ({ setSelectedProject }) => {
+  useEffect(() => {
+    if (images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 3000); // Troca a imagem a cada 3 segundos
+
+      return () => clearInterval(interval); // Limpa o intervalo quando o componente for desmontado
+    }
+  }, [images.length]);
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-6">
-      {projects.map((project) => (
-        <motion.div
-          key={project.id}
-          className="bg-gradient-to-b from-[#480953] to-[#2d1332] text-white p-4 rounded-lg shadow-lg cursor-pointer overflow-hidden relative"
-          onClick={() => setSelectedProject(project)}
+    <div className="bg-gradient-to-b from-[#480953] to-[#2d1332] rounded-2xl shadow-xl p-6 transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <img
+        src={images[currentImageIndex]}  // Agora usa o índice para controlar a imagem
+        alt={title}
+        className="rounded-lg mb-4 w-full h-40 object-cover"
+      />
+      <h3 className="text-white text-lg font-semibold">{title}</h3>
+      <p className="text-zinc-400 text-sm mb-3">{description}</p>
+      <div className="flex justify-between items-center">
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-indigo-400 hover:underline"
         >
-          <img src={project.img} alt={project.title} className="w-full h-48 object-cover rounded-md" />
-          <h3 className="mt-4 text-lg font-bold">{project.title}</h3>
-        </motion.div>
-      ))}
+          Ver código
+        </a>
+        <a
+          href={demoLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm bg-indigo-500 text-white px-3 py-1 rounded-lg hover:bg-indigo-400"
+        >
+          Ver demo
+        </a>
+      </div>
     </div>
   );
 };
 
-export default CardList;
+export default ProjectCard;

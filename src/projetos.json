@@ -1,23 +1,37 @@
 [
     {
-      "title": "Portfólio pessoal",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "title": "Compare Compre Carros",
+      "description": "Compare Compre Carros é uma plataforma de compra e venda de veículos, desenvolvida com Laravel para o backend, Tailwind CSS para o frontend, Livewire para interatividade dinâmica e SQL para manipulação de dados no banco de dados.\n\n A aplicação permite que os usuários busquem e comparem carros de forma intuitiva e sem esforço, com uma interface adaptada a dispositivos móveis e desktop. Utilizando Livewire, foram criados componentes dinâmicos que possibilitam atualizações em tempo real, como filtros de pesquisa e exibição de resultados.\n\nNo backend, o SQL foi utilizado para consultas eficientes, garantindo que a plataforma lidasse com grandes volumes de dados de veículos, categorização e preços, oferecendo respostas rápidas e precisas. O uso de consultas SQL otimizadas permitiu que a experiência do usuário fosse fluida e sem atrasos, mesmo com um grande número de registros no banco de dados.",
       "images": [
-        "https://www.rmcad.edu/wp-content/uploads/2024/03/760x425-What-is-Illustration-RMCAD-header.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5KvLLTfd5XV1doXpVxaB4cuvJL1tB09oASxbSeXO4-CrSLe_Ng4KE-bnVfOvapWo-eI&usqp=CAU"
+        "/assets/compareCompreCarros/ccc1.png",
+        "/assets/compareCompreCarros/ccc2.png",
+        "/assets/compareCompreCarros/ccc3.png",
+        "/assets/compareCompreCarros/ccc4.png",
+        "/assets/compareCompreCarros/ccc5.png"
       ],
-      "githubLink": "https://github.com/FrancielliAndreghetto/portfolio",
-      "demoLink": "https://francielli.dev"
+      "githubLink": "",
+      "demoLink": "https://www.comparecomprecarro.com.br/",
+      "icons": [
+         "/assets/icons/laravel-brands (1).svg",
+          "/assets/icons/database.png",
+         "/assets/icons/icons8-tailwind-css-48.png"
+      ]
     },
     {
-      "title": "Clone Netflix",
-      "description": "Um clone da Netflix usando ReactJS e API TMDB.",
+      "title": "Uniplay",
+      "description": "Uniplay é uma plataforma de streaming inspirada na Netflix, desenvolvida com ReactJS para o frontend e Tailwind CSS para a estilização. O sistema faz integração com a API do The Movie Database (TMDb) para buscar e exibir filmes, séries e informações relacionadas de maneira dinâmica e em tempo real.\n\nA comunicação com a API do TMDb permite que o site ofereça uma vasta gama de conteúdos, com detalhes de filmes, trailers e avaliações, proporcionando uma experiência de navegação fluida e intuitiva.",
       "images": [
-        "https://www.rmcad.edu/wp-content/uploads/2024/03/760x425-What-is-Illustration-RMCAD-header.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5KvLLTfd5XV1doXpVxaB4cuvJL1tB09oASxbSeXO4-CrSLe_Ng4KE-bnVfOvapWo-eI&usqp=CAU"
+        "/assets/site-tv/site-tv1.png",
+        "/assets/site-tv/site-tv2.png",
+        "/assets/site-tv/site-tv3.png",
+        "/assets/site-tv/site-tv4.png"
       ],
-      "githubLink": "https://github.com/FrancielliAndreghetto/netflix-clone",
-      "demoLink": ""
+      "githubLink": "https://github.com/FrancielliAndreghetto/siteTV",
+      "demoLink": "https://site-tv.vercel.app/",
+       "icons": [
+        "/assets/icons/react-brands (1).svg",
+        "/assets/icons/icons8-tailwind-css-48.png"
+       ]
     }
   ]
   

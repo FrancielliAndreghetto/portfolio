@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import ParticleBackground from "./particlesBackground";
 import ProjectCard from "./cardList";
 import projectsData from "./projetos.json";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 type Project = {
   title: string;
@@ -11,188 +14,182 @@ type Project = {
   images: string[];
   githubLink: string;
   demoLink: string;
+  icons: string[];
 };
 
 const App = () => {
-
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Carrega os projetos do JSON local
     setProjects(projectsData);
     setLoading(false);
+    AOS.init({ duration: 1500, once: true });
   }, []);
 
   const text = "Olá, meu nome é Francielli Andreghetto";
-  const numSteps = text.length; // Número de caracteres do texto
+  const numSteps = text.length;
   const [selectedProject, setSelectedProject] = useState<{
     id: string;
     title: string;
     img: string;
     description: string;
+    icons: string;
   } | null>(null);
 
   return (
     <div>
       <ParticleBackground />
-      <div className="relative z-10"> 
+      <div className="relative z-10">
 
-      <section className="flex items-center justify-center h-screen p-8">
-        <div>
-          <div className="flex justify-center items-center w-full">
-            <div className=" flex flex-col gap-3">
-              <h1 className="text-white font-bold text-4xl typing-effect" style={{ animation: `typing 4s steps(${numSteps}) 1s 1 normal both, blink 0.75s step-end infinite`}}>
-                {text}
-              </h1>
-              <p className="text-white font-semibold text-center">Desenvolvedora Full Stack</p>
-            
+        <section className="flex items-center justify-center h-screen p-8" data-aos="fade-up">
+          <div>
+            <div className="flex justify-center items-center w-full">
+              <div className="flex flex-col gap-3 items-center">
+                <h1
+                  className="text-white font-bold text-4xl typing-effect"
+                  style={{
+                    animation: `typing 4s steps(${numSteps}) 1s 1 normal both, blink 0.75s step-end infinite`,
+                  }}
+                >
+                  {text}
+                </h1>
+                <p className="text-white font-semibold text-center flex items-center gap-2">
+                  Desenvolvedora Full Stack
+                </p>
+
+                <div className="flex gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/francielli-a-9326b61b2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-blue-400 transition"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} style={{ color: "#8f15a8", width: "32px", height: "32px" }} />
+                  </a>
+                  <a
+                    href="https://github.com/FrancielliAndreghetto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-gray-300 transition"
+                  >
+                    <FontAwesomeIcon icon={faGithub} style={{ color: "#8f15a8", width: "32px", height: "32px" }} />
+                  </a>
+                </div>
+              </div>
+
             </div>
-            {/* <div className="relative w-[450px] h-[450px] flex justify-center items-center">
-              <img
-                width="450"
-                src="../public/assets/Gradient.png"
-                alt="Gradient"
-                className="absolute w-[480px] h-auto object-contain"
-              />
-              <img
-                width="450"
-                src="../public/assets/Coding-cuate.svg"
-                alt="My Icon"
-                className="absolute mt-2 w-[400px] h-auto object-contain"
-              />
-            </div> */}
           </div>
-        </div>
-      </section>
-      <section className="flex items-center justify-center h-screen p-8">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-white font-bold text-3xl">My skills</h1>
-          <div className="grid grid-cols-6 items-center justify-center gap-4 mt-5">
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              titleLanguage="HTML"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              titleLanguage="CSS"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              titleLanguage="JavaScript"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-              titleLanguage="React"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-              titleLanguage="BootStrap"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-              titleLanguage="TailwindCSS"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-              titleLanguage="MySQL"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              titleLanguage="TypeScript"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
-              titleLanguage="NodeJS"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-              titleLanguage="Python"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-              titleLanguage="PHP"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-              titleLanguage="Laravel"
-            />
-          </div>
-        </div>
-      </section>
-      <section className="h-screen p-8">
-        <div>
-          <h1 className="text-white text-center font-bold text-3xl">Meus projetos</h1>
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              images={project.images}
-              title={project.title}
-              description={project.description}
-              githubLink={project.githubLink}
-              demoLink={project.demoLink}
-            />
-          ))}
-          </div>
+        </section>
 
-        </div>
-      </section>
-      {/* <section>
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-white font-bold text-3xl">My skills</h1>
-          <div className="grid grid-cols-6 items-center justify-center gap-4 mt-5">
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              titleLanguage="HTML"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              titleLanguage="CSS"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              titleLanguage="JavaScript"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-              titleLanguage="React"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-              titleLanguage="BootStrap"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-              titleLanguage="TailwindCSS"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-              titleLanguage="MySQL"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              titleLanguage="TypeScript"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
-              titleLanguage="NodeJS"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-              titleLanguage="Python"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-              titleLanguage="PHP"
-            />
-            <CardSkills
-              imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-              titleLanguage="Laravel"
-            />
+        <section className="flex items-center justify-center h-screen px-4 py-8" data-aos="fade-up">
+          <div className="max-w-3xl text-center">
+            <h1 className="text-white font-bold text-4xl mb-8">Sobre mim</h1>
+            <p className="text-zinc-300 text-lg leading-relaxed">
+              Sou Francielli Andreghetto, desenvolvedora full-stack com uma paixão especial pelo front-end. Estou no 6º semestre
+              de Ciência da Computação e atualmente atuo em uma empresa de educação, onde transformo ideias em soluções digitais que
+              realmente fazem a diferença no dia a dia das pessoas.
+              <br /><br />
+              Gosto de criar interfaces que unam estética, funcionalidade e acessibilidade. Me inspiro em boas experiências de uso
+              e estou sempre em busca de aprender algo novo — seja uma tecnologia, uma abordagem de design ou uma forma mais eficiente
+              de resolver problemas.
+              <br /><br />
+              Fora do código, sou curiosa, determinada e movida pelo desafio de entregar valor com propósito.
+            </p>
           </div>
-        </div>
-      </section> */}
+        </section>
+
+        <section className="py-20 px-4 text-zinc-100" data-aos="fade-up">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center">Experiências</h2>
+            <div className="border-l-2 border-purple-600 pl-6 space-y-12">
+              <div className="relative">
+                <span className="absolute -left-3 top-1 w-5 h-5 bg-purple-600 rounded-full"></span>
+                <h3 className="text-xl font-semibold ml-5">Desenvolvedora Full-Stack – Diário Escola</h3>
+                <span className="text-sm text-zinc-400">Nov/2023 - Atual</span>
+                <p className="mt-2 text-zinc-300">
+                Faço parte da equipe responsável por implementar novas funcionalidades utilizando SAPUI5, contribuindo para soluções eficientes e escaláveis. Paralelamente, atuo no time focado na evolução das interfaces, participando de um projeto estratégico que visa reformular o layout do aplicativo dos pais. Nesse projeto, aplico princípios de UX/UI, elaboro protótipos no Figma e atualizo o código das páginas para tornar a experiência mais moderna, intuitiva e acessível.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="flex items-center justify-center h-screen p-8" data-aos="fade-up">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-white font-bold text-3xl">Minhas habilidades</h1>
+            <div className="grid grid-cols-6 items-center justify-center gap-4 mt-5">
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                titleLanguage="HTML"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                titleLanguage="CSS"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                titleLanguage="JavaScript"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                titleLanguage="React"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                titleLanguage="BootStrap"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                titleLanguage="TailwindCSS"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                titleLanguage="MySQL"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                titleLanguage="TypeScript"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                titleLanguage="NodeJS"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                titleLanguage="Python"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                titleLanguage="PHP"
+              />
+              <CardSkills
+                imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+                titleLanguage="Laravel"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="h-screen p-8" data-aos="fade-up">
+          <div>
+            <h1 className="text-white text-center font-bold text-3xl">Meus projetos</h1>
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  images={project.images}
+                  title={project.title}
+                  description={project.description}
+                  githubLink={project.githubLink}
+                  demoLink={project.demoLink}
+                  icons={project.icons}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   );

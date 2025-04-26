@@ -191,7 +191,7 @@ const App = () => {
           </div>
         </section>
 
-        <section className="py-20 px-4 text-zinc-100 mt-20" data-aos="fade-down">
+        <section className="py-20 px-4 text-zinc-100 mt-10" data-aos="fade-down">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-center">Contato</h2>
             <div className="grid grid-cols-1 gap-5 items-center justify-center sm:grid-cols-1 md:grid-cols-3 mt-5">

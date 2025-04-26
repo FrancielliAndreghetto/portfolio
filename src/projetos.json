@@ -32,6 +32,44 @@
         "/assets/icons/react-brands (1).svg",
         "/assets/icons/icons8-tailwind-css-48.png"
        ]
+    },
+    {
+      "title": "Culinary Recipes",
+      "description": "Uniplay é uma plataforma de streaming inspirada na Netflix, desenvolvida com ReactJS para o frontend e Tailwind CSS para a estilização. O sistema faz integração com a API do The Movie Database (TMDb) para buscar e exibir filmes, séries e informações relacionadas de maneira dinâmica e em tempo real.\n\nA comunicação com a API do TMDb permite que o site ofereça uma vasta gama de conteúdos, com detalhes de filmes, trailers e avaliações, proporcionando uma experiência de navegação fluida e intuitiva.",
+      "images": [
+        "/assets/culinaryRecipes/culinaryRecipes1.png",
+        "/assets/culinaryRecipes/culinaryRecipes2.png",
+        "/assets/culinaryRecipes/culinaryRecipes3.png"
+      ],
+      "githubLink": "https://github.com/FrancielliAndreghetto/culinary_recipes",
+      "demoLink": "",
+       "icons": [
+        "/assets/icons/react-brands (1).svg",
+        "/assets/icons/icons8-tailwind-css-48.png"
+       ]
+    },
+    {
+      "title": "Develon Systems",
+      "description": "Uniplay é uma plataforma de streaming inspirada na Netflix, desenvolvida com ReactJS para o frontend e Tailwind CSS para a estilização. O sistema faz integração com a API do The Movie Database (TMDb) para buscar e exibir filmes, séries e informações relacionadas de maneira dinâmica e em tempo real.\n\nA comunicação com a API do TMDb permite que o site ofereça uma vasta gama de conteúdos, com detalhes de filmes, trailers e avaliações, proporcionando uma experiência de navegação fluida e intuitiva.",
+      "images": [
+        "/assets/develon/develon1.png",
+        "/assets/develon/develon2.png",
+        "/assets/develon/develon3.png",
+        "/assets/develon/develon4.png",
+        "/assets/develon/develon5.png",
+        "/assets/develon/develon6.png",
+        "/assets/develon/develon7.png",
+        "/assets/develon/develon8.png",
+        "/assets/develon/develon9.png",
+        "/assets/develon/develon10.png",
+        "/assets/develon/develon11.png"
+      ],
+      "githubLink": "https://github.com/FrancielliAndreghetto",
+      "demoLink": "https://develonsystems.com.br/",
+       "icons": [
+        "/assets/icons/react-brands (1).svg",
+        "/assets/icons/icons8-tailwind-css-48.png"
+       ]
     }
   ]
   

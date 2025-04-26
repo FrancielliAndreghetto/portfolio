@@ -35,9 +35,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Card */}
       <div
         onClick={() => setIsOpen(true)}
-        className="relative w-full max-w-xl mx-auto rounded-2xl overflow-hidden border-b-4 border-[#480953] transform transition-transform duration-500 hover:scale-105 group cursor-pointer"
+        className="relative w-full sm:max-w-md md:max-w-lg mx-auto rounded-2xl overflow-hidden border-b-4 border-[#480953] transform transition-transform duration-500 hover:scale-105 group cursor-pointer"
       >
-        <div className="relative h-64 w-full">
+        <div className="relative h-52 sm:h-64 md:h-72 w-full">
           {/* Imagens com animação de transição */}
           {images.map((img, index) => (
             <img
@@ -54,16 +54,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
 
           {/* Conteúdo fixo acima das imagens */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-20">
-            <h3 className="text-2xl font-bold mb-4">{title}</h3>
-            <div className="flex gap-4 text-purple-400 text-2xl">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-20 p-2">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-center">{title}</h3>
+            <div className="flex flex-wrap justify-center gap-2 text-purple-400">
               {icons &&
                 icons.map((icon, index) => (
                   <img
                     key={index}
                     src={icon}
                     alt={`Icon ${index}`}
-                    className="w-6 h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                   />
                 ))}
             </div>
@@ -97,22 +97,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-gradient-to-b from-[#480953] to-[#2d1332] p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md sm:max-w-lg transform overflow-hidden rounded-2xl bg-[#2d1332] p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-bold leading-6 text-white"
+                    className="text-lg sm:text-xl font-bold leading-6 text-white"
                   >
                     {title}
                   </Dialog.Title>
-                  <div className="mt-2 text-zinc-300 text-sm">
+                  <div className="mt-2 text-zinc-300 text-sm sm:text-base">
                     {description}
                   </div>
 
-                  <div className="mt-4 flex justify-end gap-4">
+                  <div className="mt-4 flex flex-col sm:flex-row justify-end gap-2 sm:gap-4">
                     <a
                       href={githubLink}
                       target="_blank"
-                      className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-500"
+                      className="px-4 py-2 bg-[#8f15a8] text-white rounded hover:bg-[#9A2CB0] text-center"
                       rel="noopener noreferrer"
                     >
                       GitHub
@@ -120,7 +120,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     <a
                       href={demoLink}
                       target="_blank"
-                      className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-400"
+                      className="px-4 py-2 bg-white text-gray-600 rounded hover:bg-gray-300 text-center"
                       rel="noopener noreferrer"
                     >
                       Demo

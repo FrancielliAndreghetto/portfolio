@@ -35,7 +35,7 @@
     },
     {
       "title": "Culinary Recipes",
-      "description": "Uniplay é uma plataforma de streaming inspirada na Netflix, desenvolvida com ReactJS para o frontend e Tailwind CSS para a estilização. O sistema faz integração com a API do The Movie Database (TMDb) para buscar e exibir filmes, séries e informações relacionadas de maneira dinâmica e em tempo real.\n\nA comunicação com a API do TMDb permite que o site ofereça uma vasta gama de conteúdos, com detalhes de filmes, trailers e avaliações, proporcionando uma experiência de navegação fluida e intuitiva.",
+      "description": "Culinary Recipes é um site desenvolvido como parte de um projeto da faculdade, com o objetivo de criar uma plataforma interativa e colaborativa voltada para o compartilhamento de receitas culinárias. No site, os usuários podem cadastrar e publicar suas próprias receitas, que ficam organizadas por categorias como doces, salgados, massas, vegetarianas, entre outras, facilitando a navegação e a busca por pratos específicos. Além disso, cada usuário pode favoritar as receitas que mais gosta, e com base nesse engajamento, o sistema destaca diariamente a 'Receita do dia', que é a receita que recebeu o maior número de favoritos nas últimas 24 horas. O site também oferece um espaço para comentários em cada receita, incentivando a troca de experiências, sugestões e dicas entre os usuários. O Culinary Recipes foi desenvolvido com foco na experiência do usuário, funcionalidade prática e aplicação de conhecimentos em desenvolvimento web, sendo um exemplo completo de projeto acadêmico com propósito colaborativo e criativo.",
       "images": [
         "/assets/culinaryRecipes/culinaryRecipes1.png",
         "/assets/culinaryRecipes/culinaryRecipes2.png",
@@ -50,7 +50,7 @@
     },
     {
       "title": "Develon Systems",
-      "description": "Uniplay é uma plataforma de streaming inspirada na Netflix, desenvolvida com ReactJS para o frontend e Tailwind CSS para a estilização. O sistema faz integração com a API do The Movie Database (TMDb) para buscar e exibir filmes, séries e informações relacionadas de maneira dinâmica e em tempo real.\n\nA comunicação com a API do TMDb permite que o site ofereça uma vasta gama de conteúdos, com detalhes de filmes, trailers e avaliações, proporcionando uma experiência de navegação fluida e intuitiva.",
+      "description": "Develon Systems é uma landing page desenvolvida para apresentar a empresa Develon, especializada na criação de softwares sob medida para atender às necessidades específicas de cada cliente. A proposta da página é transmitir, de forma clara e objetiva, os serviços oferecidos pela empresa, sua identidade visual moderna e seu compromisso com soluções personalizadas e eficientes. O layout foi pensado para ser responsivo, dinâmico e visualmente atrativo, utilizando tecnologias modernas como React para a estrutura da aplicação e Tailwind CSS para a estilização, o que garantiu agilidade no desenvolvimento e uma interface leve, elegante e bem organizada. A landing page conta com seções institucionais, destaques dos serviços, chamada para contato e navegação fluida, funcionando como um cartão de visitas digital para a Develon, reforçando sua presença no ambiente online e aproximando a empresa de seus potenciais clientes.",
       "images": [
         "/assets/develon/develon1.png",
         "/assets/develon/develon2.png",

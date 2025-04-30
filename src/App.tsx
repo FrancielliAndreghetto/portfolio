@@ -116,10 +116,10 @@ const App = () => {
           </div>
         </section>
 
-        <section className="flex items-center justify-center min-h-screen p-4 sm:p-8" data-aos="fade-down">
+        <section className="flex items-center justify-center min-h-screen p-4" data-aos="fade-down">
           <div className="flex flex-col items-center justify-center w-full">
             <h1 className="text-white font-bold text-2xl sm:text-3xl text-center">Minhas habilidades</h1>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 mt-5 w-full max-w-6xl">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 mt-5 gap-3 max-w-6xl">
               <CardSkills
                 imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
                 titleLanguage="HTML"
@@ -172,7 +172,7 @@ const App = () => {
           </div>
         </section>
 
-        <section className="h-screen p-8" data-aos="fade-down">
+        <section className="min-h-screen p-8" data-aos="fade-down">
           <div>
             <h1 className="text-white text-center font-bold text-2xl sm:text-3xl">Meus projetos</h1>
             <div className="grid gap-6 mt-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

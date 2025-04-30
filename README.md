@@ -1,4 +1,5 @@
 💼 **Portfólio Pessoal**
+
 Bem-vindo(a) ao repositório do meu portfólio pessoal! 🌟
 
 Este projeto foi desenvolvido com React e Tailwind CSS, e tem como principal objetivo reunir, de forma interativa e responsiva, os principais pontos da minha trajetória como desenvolvedora. Aqui você encontra informações sobre mim, meus projetos e formas de contato — tudo isso reunido em uma experiência visual que traduz minha identidade profissional.
@@ -15,7 +16,8 @@ Cada seção foi pensada com carinho e pode ser expandida com novos recursos no 
 
 É um projeto vivo, em evolução junto comigo.
 
-🛠️ Tecnologias utilizadas
+🛠️ **Tecnologias utilizadas**
+
 React
 
 Tailwind CSS
